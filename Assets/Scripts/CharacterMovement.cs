@@ -11,6 +11,8 @@ public class CharacterMovement : MonoBehaviour
     private float _jumpHeight = 1.0f;
     private float _gravityValue = -9.81f;
 
+    public int playerSpeed { get; internal set; }
+
     void Update()
     {
         _groundedPlayer = controller.isGrounded;
