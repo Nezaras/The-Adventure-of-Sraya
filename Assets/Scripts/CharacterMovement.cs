@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
 {
+    public float playerSpeed = 5.0f;
+
     [SerializeField] CharacterController controller;
     private Vector3 _playerVelocity;
     private bool _groundedPlayer;
-    private float _playerSpeed = 5.0f;
     private float _jumpHeight = 1.0f;
     private float _gravityValue = -9.81f;
 
