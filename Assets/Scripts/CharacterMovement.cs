@@ -11,7 +11,7 @@ public class CharacterMovement : MonoBehaviour
     private bool _groundedPlayer;
     private float _jumpHeight = 1.0f;
     private float _gravityValue = -9.81f;
-    private float _playerSpeed;
+    
 
     void Update()
     {
@@ -22,7 +22,7 @@ public class CharacterMovement : MonoBehaviour
         }
 
         Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        controller.Move(move * Time.deltaTime * _playerSpeed);
+        controller.Move(move * Time.deltaTime * playerSpeed);
 
         if (move != Vector3.zero)
         {
