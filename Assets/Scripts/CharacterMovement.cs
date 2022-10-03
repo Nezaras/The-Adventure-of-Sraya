@@ -11,6 +11,7 @@ public class CharacterMovement : MonoBehaviour
     private bool _groundedPlayer;
     private float _jumpHeight = 1.0f;
     private float _gravityValue = -9.81f;
+    private float _playerSpeed;
 
     void Update()
     {
