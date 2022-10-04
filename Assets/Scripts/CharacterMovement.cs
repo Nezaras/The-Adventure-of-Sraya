@@ -24,18 +24,6 @@ public class CharacterMovement : MonoBehaviour
         canMove = true;
     }
 
-    private void Start()
-    {
-        anim = GetComponent<Animator>();
-        canMove = true;
-    }
-
-    private void Start()
-    {
-        anim = GetComponent<Animator>();
-        canMove = true;
-    }
-
     void Update()
     {
         _groundedPlayer = controller.isGrounded;
@@ -58,13 +46,13 @@ public class CharacterMovement : MonoBehaviour
             if (move != Vector3.zero)
             {
                 isMove = true;
-                anim.SetFloat("Movement", 0.5f);
+                //anim.SetFloat("Movement", 0.5f);
                 gameObject.transform.forward = move;
             }
             else
             {
                 isMove = false;
-                anim.SetFloat("Movement", 0f);
+                //anim.SetFloat("Movement", 0f);
             }
         }
     }
