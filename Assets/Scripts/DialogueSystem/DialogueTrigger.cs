@@ -1,19 +1,29 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class DialogueTrigger : MonoBehaviour
 {
-    [SerializeField] DialogueManager manager;
+    public GameObject button;
 
-    public Dialogue dialogue;
+    [SerializeField] DialogueManager manager;
+    [SerializeField] Dialogue dialogue;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            manager.StartDialogue(dialogue);
-            manager.DisplayNextSentence();
+            button.SetActive(true);
         }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        button.SetActive(false);
+    }
+
+    public void ShowDialogue()
+    {
+        manager.StartDialogue(dialogue);
+        manager.DisplayNextSentence();
     }
 }

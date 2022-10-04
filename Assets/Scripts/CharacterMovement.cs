@@ -24,6 +24,12 @@ public class CharacterMovement : MonoBehaviour
         canMove = true;
     }
 
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
+        canMove = true;
+    }
+
     void Update()
     {
         _groundedPlayer = controller.isGrounded;
