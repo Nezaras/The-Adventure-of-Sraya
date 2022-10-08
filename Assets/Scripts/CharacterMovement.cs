@@ -53,7 +53,7 @@ public class CharacterMovement : MonoBehaviour
             }
             else
             {
-                isMove = false;
+                isMove = false;                
                 anim.SetFloat("Movement", 0f);
                 anim.SetBool("Push", false);
             }
