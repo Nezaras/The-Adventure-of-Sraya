@@ -38,14 +38,21 @@ public class PushObject : MonoBehaviour
         body.velocity = pushDir * pushPower;
     }
 
-    private void OnCollisionStay(Collision collision)
+    private void OnTriggerStay(Collider other)
     {
-        if (collision.gameObject.CompareTag("PushableObject") && movement.isMove)
+        if (other.CompareTag("PushableObject") && movement.isMove)
         {
-            Debug.Log("Pushed");
             anim.SetBool("Push", true);
         }
-        if (!movement.isMove)
+        else
+        {
+            anim.SetBool("Push", false);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("PushableObject"))
         {
             anim.SetBool("Push", false);
         }
