@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Cinemachine;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class DialogueManager : MonoBehaviour
 
     [SerializeField] GameObject dialogBox;
     [SerializeField] CharacterMovement player;
+    [SerializeField] CinemachineVirtualCamera vCam;
 
     private Queue<string> _sentences;
     private Queue<string> _name;
@@ -24,8 +26,11 @@ public class DialogueManager : MonoBehaviour
     
     public void StartDialogue(Dialogue dialogue)
     {
-        //Make speed of player to zero
-        player.playerSpeed = 0;
+        //Adjust virtual cam
+        vCam.m_Lens.FieldOfView = 20;
+
+        //Make player can't move
+        player.canMove = false;
 
         //Make dialog box is active
         dialogBox.SetActive(true);
@@ -65,11 +70,14 @@ public class DialogueManager : MonoBehaviour
 
     void EndDialogue()
     {
-        //Return the player speed
-        player.playerSpeed = 5.0f;
+        //Return field of view value camera
+        vCam.m_Lens.FieldOfView = 40;
+
+        //Return canMove variable
+        player.canMove = true;
 
         //Make dialog box is inactive
-        dialogBox.SetActive(false);
+        dialogBox.SetActive(false);        
 
         //Adding Quest Here
     }
