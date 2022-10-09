@@ -16,7 +16,6 @@ public class CharacterMovement : MonoBehaviour
     private bool _groundedPlayer;
     private float _jumpHeight = 1.0f;
     private float _gravityValue = -9.81f;
-    
 
     private void Start()
     {
@@ -43,16 +42,20 @@ public class CharacterMovement : MonoBehaviour
             Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
             controller.Move(move * Time.deltaTime * playerSpeed);
 
+            _playerVelocity.y += _gravityValue * Time.deltaTime;
+            controller.Move(_playerVelocity * Time.deltaTime);
+
             if (move != Vector3.zero)
             {
                 isMove = true;
-                //anim.SetFloat("Movement", 0.5f);
+                anim.SetFloat("Movement", 0.5f);
                 gameObject.transform.forward = move;
             }
             else
             {
-                isMove = false;
-                //anim.SetFloat("Movement", 0f);
+                isMove = false;                
+                anim.SetFloat("Movement", 0f);
+                anim.SetBool("Push", false);
             }
         }
     }
