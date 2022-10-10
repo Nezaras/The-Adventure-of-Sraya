@@ -1579,7 +1579,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4bfa4c7c0379ca438db3ea337b05d10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 3.5
+  playerSpeed: 2.5
   canMove: 1
   isMove: 0
   controller: {fileID: 7314187394686312070}

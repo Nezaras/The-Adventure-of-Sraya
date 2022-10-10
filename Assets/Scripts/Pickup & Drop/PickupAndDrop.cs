@@ -26,6 +26,8 @@ public class PickupAndDrop : MonoBehaviour
                 _pickupableObject.transform.position = handCharacter.transform.position;
                 _pickupableObject.transform.parent = handCharacter.transform;
 
+                _pickupableObject.tag = "PickedUpObject";
+
                 _hasItem = true;
             }
         }
@@ -33,6 +35,8 @@ public class PickupAndDrop : MonoBehaviour
         {
             _pickupableObject.GetComponent<Rigidbody>().isKinematic = false;
             _pickupableObject.transform.parent = null;
+
+            _pickupableObject.tag = "PickupableObject";
 
             _hasItem = false;
         }
