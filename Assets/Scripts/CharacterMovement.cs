@@ -40,6 +40,7 @@ public class CharacterMovement : MonoBehaviour
         if (canMove)
         {
             Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+            move.Normalize();
             controller.Move(move * Time.deltaTime * playerSpeed);
 
             _playerVelocity.y += _gravityValue * Time.deltaTime;
