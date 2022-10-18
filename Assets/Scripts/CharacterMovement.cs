@@ -7,6 +7,7 @@ public class CharacterMovement : MonoBehaviour
     public float playerSpeed = 5.0f;
     public bool canMove;
     public bool isMove;
+	public float speedCamera;
 
     [SerializeField] CharacterController controller;
 
@@ -16,6 +17,11 @@ public class CharacterMovement : MonoBehaviour
     private bool _groundedPlayer;
     private float _jumpHeight = 1.0f;
     private float _gravityValue = -9.81f;
+	
+	public Transform VirtualCamera;
+	
+	//yang ditambah
+	private float _MoveY;
 
     private void Start()
     {
@@ -37,10 +43,19 @@ public class CharacterMovement : MonoBehaviour
 
     void Move()
     {
+		
         if (canMove)
         {
-            Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+			//yang ditambah (start)
+			_MoveY = VirtualCamera.eulerAngles.y;
+			_MoveY = (_MoveY > 180) ? _MoveY - 360 : _MoveY;
+			
+			Vector3 move = Quaternion.Euler (0, VirtualCamera.eulerAngles.y, 0) * new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
+			
+			//yang ditambah (end)
+
             move.Normalize();
+			
             controller.Move(move * Time.deltaTime * playerSpeed);
 
             _playerVelocity.y += _gravityValue * Time.deltaTime;
@@ -50,7 +65,8 @@ public class CharacterMovement : MonoBehaviour
             {
                 isMove = true;
                 anim.SetFloat("Movement", 0.5f);
-                gameObject.transform.forward = move;
+				//move.y = _MoveY;
+				transform.forward = move;
             }
             else
             {
