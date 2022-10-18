@@ -1227,8 +1227,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 804, y: 452}
+  m_AnchoredPosition: {x: 0, y: 1.9}
+  m_SizeDelta: {x: 1, y: 0.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &5681819355063305135
 Canvas:
@@ -1309,7 +1309,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5681819356358342954
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1327,7 +1327,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 1.967}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 84.38, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5681819356358342951
@@ -1532,19 +1532,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b42a0b1be5daae548a529879c4d50b3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 5681819356358342955}
+  button: {fileID: 5681819355063305107}
   manager: {fileID: 0}
   dialogue:
     name:
-    - Nenek
-    - Nenek
+    - Sraya
     - Nenek
     - Sraya
+    - Nenek
+    - Sraya
+    - Nenek
     sentences:
-    - Halo cu
-    - Tolong bantu aku cu
-    - Bawakan beras ini
-    - Baik nek skuy gasken!
+    - Punten nek, mau saya bantu membawakan barang?
+    - 'Tidak usah nak.. Nenek masih kuat.. '
+    - Ayolah nek, saya hanya ingin membantu
+    - "Hmm baiklah.. Kalau begitu tolong bawakan karung beras disana ya\u2026\r\n"
+    - 'ayay captain! Diantar kemana nek? '
+    - 'Ke rumahku, ikuti aku ya.. '
 --- !u!1 &5890463742234297517
 GameObject:
   m_ObjectHideFlags: 0
