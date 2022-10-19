@@ -3,19 +3,23 @@ using Cinemachine;
 
 public class DialogueTrigger : MonoBehaviour
 {
-    public GameObject button;
+    [SerializeField] GameObject canvas;
 
     [SerializeField] Transform sraya;
     [SerializeField] Transform npc;
 
+    [SerializeField] GameManager gameManager;
     [SerializeField] DialogueManager dialogueManager;
     [SerializeField] Dialogue dialogue;
+
+    bool isNear;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            button.SetActive(true);
+            isNear = true;
+            canvas.SetActive(true);
         }
     }
 
@@ -23,7 +27,20 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            button.SetActive(false);
+            isNear = false;
+            canvas.SetActive(false);
+        }
+    }
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.F) && isNear)
+        {
+            ShowDialogue();
+            canvas.SetActive(false);
+
+            gameManager.PickupableKarungNenek();
+            gameObject.SetActive(false);
         }
     }
 
