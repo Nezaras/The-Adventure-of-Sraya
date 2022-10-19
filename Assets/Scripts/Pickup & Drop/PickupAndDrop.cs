@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class PickupAndDrop : MonoBehaviour
 {
+    [SerializeField] GameManager gameManager;
     [SerializeField] Transform handCharacter;
+    [SerializeField] DialogueTrigger dialogueNenek;
 
     bool _canPickup;
     bool _hasItem;
-    GameObject _pickupableObject;
+    
+    [HideInInspector]
+    public GameObject pickupableObject;
    
     void Start()
     {
@@ -22,21 +26,25 @@ public class PickupAndDrop : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                _pickupableObject.GetComponent<Rigidbody>().isKinematic = true;
-                _pickupableObject.transform.position = handCharacter.transform.position;
-                _pickupableObject.transform.parent = handCharacter.transform;
+                pickupableObject.GetComponent<Rigidbody>().isKinematic = true;
+                pickupableObject.transform.position = handCharacter.transform.position;
+                pickupableObject.transform.parent = handCharacter.transform;
 
-                _pickupableObject.tag = "PickedUpObject";
+                pickupableObject.tag = "PickedUpObject";                
 
                 _hasItem = true;
+
+                gameManager.QuestNenek();
             }
         }
         if (Input.GetKeyDown(KeyCode.Q) && _hasItem == true)
         {
-            _pickupableObject.GetComponent<Rigidbody>().isKinematic = false;
-            _pickupableObject.transform.parent = null;
+            pickupableObject.GetComponent<Rigidbody>().isKinematic = false;
+            pickupableObject.transform.parent = null;
 
-            _pickupableObject.tag = "PickupableObject";
+            pickupableObject.tag = "PickupableObject";
+
+            dialogueNenek.ShowDialogue();
 
             _hasItem = false;
         }
@@ -46,7 +54,7 @@ public class PickupAndDrop : MonoBehaviour
         if (other.gameObject.CompareTag("PickupableObject"))
         {
             _canPickup = true;
-            _pickupableObject = other.gameObject;
+            pickupableObject = other.gameObject;
         }
     }
     private void OnTriggerExit(Collider other)

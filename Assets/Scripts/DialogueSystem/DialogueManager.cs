@@ -10,6 +10,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] Text nameText;
     [SerializeField] Text dialogueText;
 
+    [SerializeField] GameManager gameManager;
     [SerializeField] GameObject dialogBox;
     [SerializeField] CharacterMovement player;
     [SerializeField] CinemachineVirtualCamera vCam;
@@ -77,8 +78,6 @@ public class DialogueManager : MonoBehaviour
         player.canMove = true;
 
         //Make dialog box is inactive
-        dialogBox.SetActive(false);        
-
-        //Adding Quest Here
+        dialogBox.SetActive(false);
     }
 }
