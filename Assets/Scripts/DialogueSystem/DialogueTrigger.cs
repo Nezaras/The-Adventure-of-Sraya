@@ -5,7 +5,7 @@ public class DialogueTrigger : MonoBehaviour
 {
     public GameObject button;
 
-    [SerializeField] DialogueManager manager;
+    [SerializeField] DialogueManager dialogueManager;
     [SerializeField] Dialogue dialogue;
 
     private void OnTriggerEnter(Collider other)
@@ -18,12 +18,15 @@ public class DialogueTrigger : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        button.SetActive(false);
+        if (other.CompareTag("Player"))
+        {
+            button.SetActive(false);
+        }
     }
 
     public void ShowDialogue()
     {
-        manager.StartDialogue(dialogue);
-        manager.DisplayNextSentence();
+        dialogueManager.StartDialogue(dialogue);
+        dialogueManager.DisplayNextSentence();
     }
 }

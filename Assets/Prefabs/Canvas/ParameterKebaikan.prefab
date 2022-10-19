@@ -89,9 +89,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 025ab554c7ab11e4fb7368712db08505, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  current: 30
+  current: 0
   min: 0
-  max: 35
+  max: 6
   fill: {fileID: 639756584420200193}
 --- !u!1 &639756584420200194
 GameObject:
@@ -163,7 +163,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0.22857143
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
