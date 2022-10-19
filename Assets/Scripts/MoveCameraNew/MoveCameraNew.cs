@@ -43,7 +43,7 @@ public class MoveCameraNew : MonoBehaviour
 		_rotateY += mouseY;
 		_scrollY += -mouseScroll;
 		
-		//Debug.Log(_rotateY);
+		Debug.Log(_scrollY);
 		
 		_rotateX = Mathf.Clamp(_rotateX, -5, 30);
 		//_rotateY = Mathf.Clamp(_rotateY, -90, 90);
