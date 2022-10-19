@@ -10952,26 +10952,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5681819355063305106, guid: 83ed7eb849e267047aac0a4b67fa2b97, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: -0.46174863
-      objectReference: {fileID: 0}
-    - target: {fileID: 5681819355063305106, guid: 83ed7eb849e267047aac0a4b67fa2b97, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5681819355063305106, guid: 83ed7eb849e267047aac0a4b67fa2b97, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.8870109
-      objectReference: {fileID: 0}
-    - target: {fileID: 5681819355063305106, guid: 83ed7eb849e267047aac0a4b67fa2b97, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5681819355063305106, guid: 83ed7eb849e267047aac0a4b67fa2b97, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 235
-      objectReference: {fileID: 0}
     - target: {fileID: 5681819355063305107, guid: 83ed7eb849e267047aac0a4b67fa2b97, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -10992,6 +10972,10 @@ PrefabInstance:
       propertyPath: manager
       value: 
       objectReference: {fileID: 1118701371}
+    - target: {fileID: 5681819356868295369, guid: 83ed7eb849e267047aac0a4b67fa2b97, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1755208209}
     - target: {fileID: 5681819356868295369, guid: 83ed7eb849e267047aac0a4b67fa2b97, type: 3}
       propertyPath: dialogueManager
       value: 
