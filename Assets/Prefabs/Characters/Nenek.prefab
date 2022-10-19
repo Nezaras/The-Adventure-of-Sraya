@@ -1079,6 +1079,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93a09ae1ce56b954c835759162f73937, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tempatKarungNenek: {fileID: 0}
   pathCreator: {fileID: 0}
   endOfPathInstruction: 2
   speed: 0
@@ -1095,6 +1096,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 0}
+  sraya: {fileID: 0}
+  npc: {fileID: 0}
   dialogueManager: {fileID: 0}
   dialogue:
     name:
@@ -1570,6 +1573,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 5681819355063305107}
+  sraya: {fileID: 0}
+  npc: {fileID: 5283665626776899671}
   dialogueManager: {fileID: 0}
   dialogue:
     name:

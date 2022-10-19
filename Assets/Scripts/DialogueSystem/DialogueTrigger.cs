@@ -5,6 +5,9 @@ public class DialogueTrigger : MonoBehaviour
 {
     public GameObject button;
 
+    [SerializeField] Transform sraya;
+    [SerializeField] Transform npc;
+
     [SerializeField] DialogueManager dialogueManager;
     [SerializeField] Dialogue dialogue;
 
@@ -26,6 +29,8 @@ public class DialogueTrigger : MonoBehaviour
 
     public void ShowDialogue()
     {
+        sraya.transform.LookAt(npc);
+
         dialogueManager.StartDialogue(dialogue);
         dialogueManager.DisplayNextSentence();
     }

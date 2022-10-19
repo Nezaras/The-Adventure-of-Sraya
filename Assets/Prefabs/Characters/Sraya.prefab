@@ -1585,6 +1585,7 @@ MonoBehaviour:
   isMove: 0
   speedCamera: 2.5
   controller: {fileID: 7314187394686312070}
+  pickupAndDrop: {fileID: 2105179326385044975}
   VirtualCamera: {fileID: 0}
 --- !u!114 &2105179326385044975
 MonoBehaviour:
@@ -1602,6 +1603,7 @@ MonoBehaviour:
   handCharacter: {fileID: 7883237481527881033}
   dialogueNenek: {fileID: 0}
   pickupableObject: {fileID: 0}
+  canDrop: 0
 --- !u!1 &7613421061719261334
 GameObject:
   m_ObjectHideFlags: 0

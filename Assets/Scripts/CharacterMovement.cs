@@ -10,6 +10,7 @@ public class CharacterMovement : MonoBehaviour
 	public float speedCamera;
 
     [SerializeField] CharacterController controller;
+    [SerializeField] PickupAndDrop pickupAndDrop;
 
     private Animator anim;
 
@@ -56,13 +57,14 @@ public class CharacterMovement : MonoBehaviour
 
             move.Normalize();
 			
-            controller.Move(move * Time.deltaTime * playerSpeed);
+            controller.Move(playerSpeed * Time.deltaTime * move);
 
             _playerVelocity.y += _gravityValue * Time.deltaTime;
             controller.Move(_playerVelocity * Time.deltaTime);
 
             if (move != Vector3.zero)
             {
+                pickupAndDrop.canDrop = false;
                 isMove = true;
                 anim.SetFloat("Movement", 0.5f);
 				//move.y = _MoveY;
@@ -70,6 +72,7 @@ public class CharacterMovement : MonoBehaviour
             }
             else
             {
+                pickupAndDrop.canDrop = true;
                 isMove = false;                
                 anim.SetFloat("Movement", 0f);
                 anim.SetBool("Push", false);
