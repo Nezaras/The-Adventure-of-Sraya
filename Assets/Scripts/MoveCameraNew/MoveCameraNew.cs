@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class MoveCameraNew : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class MoveCameraNew : MonoBehaviour
 	
 	private float _rotateX;
 	private float _rotateY;
-	private float _scrollY;
+	private float _scrollY = 30;
 	
 	public Transform _target;
 	
@@ -43,14 +44,17 @@ public class MoveCameraNew : MonoBehaviour
 		_rotateY += mouseY;
 		_scrollY += -mouseScroll;
 		
-		//Debug.Log(_rotateY);
+		//Debug.Log(_scrollY);
 		
 		_rotateX = Mathf.Clamp(_rotateX, -5, 30);
-		//_rotateY = Mathf.Clamp(_rotateY, -90, 90);
-		_scrollY = Mathf.Clamp(_scrollY, 4, 30);
+		//_rotateY = Mathf.Clamp(_rotateY, 15, 30);
+		_scrollY = Mathf.Clamp(_scrollY, 15, 40);
 		
 		transform.localEulerAngles = new Vector3(_rotateX, _rotateY, 0);
 		
-		transform.position = _target.position - transform.forward * _scrollY;
+		//transform.position = _target.position - transform.forward * _scrollY;
+		//Debug.Log(_target.position - transform.forward);
+
+		GetComponent<CinemachineVirtualCamera>().m_Lens.FieldOfView  = _scrollY;
 	}
 }
