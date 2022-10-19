@@ -13,6 +13,8 @@ public class PickupAndDrop : MonoBehaviour
     
     [HideInInspector]
     public GameObject pickupableObject;
+
+    public bool canDrop;
    
     void Start()
     {
@@ -37,18 +39,23 @@ public class PickupAndDrop : MonoBehaviour
                 gameManager.QuestNenek();
             }
         }
-        if (Input.GetKeyDown(KeyCode.Q) && _hasItem == true)
+
+        if (canDrop)
         {
-            pickupableObject.GetComponent<Rigidbody>().isKinematic = false;
-            pickupableObject.transform.parent = null;
+            if (Input.GetKeyDown(KeyCode.Q) && _hasItem == true)
+            {
+                pickupableObject.GetComponent<Rigidbody>().isKinematic = false;
+                pickupableObject.transform.parent = null;
 
-            pickupableObject.tag = "PickupableObject";
+                pickupableObject.tag = "PickupableObject";
 
-            dialogueNenek.ShowDialogue();
+                dialogueNenek.ShowDialogue();
 
-            _hasItem = false;
+                _hasItem = false;
+            }
         }
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("PickupableObject"))
