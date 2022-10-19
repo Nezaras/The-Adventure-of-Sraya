@@ -2,7 +2,8 @@ using UnityEngine;
 using PathCreation;
 
 public class NenekMovement : MonoBehaviour
-{    
+{
+    [SerializeField] GameObject tempatKarungNenek;
     [SerializeField] PathCreator pathCreator;
     [SerializeField] EndOfPathInstruction endOfPathInstruction;
 
@@ -44,7 +45,7 @@ public class NenekMovement : MonoBehaviour
             anim.SetBool("Walk", false);
             speed = 0;
 
-            this.gameObject.transform.rotation = new Quaternion(0, 0, 0, transform.rotation.w);
+            tempatKarungNenek.SetActive(true);
         }
     }
 }
