@@ -1173,7 +1173,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 0}
   sraya: {fileID: 0}
-  npc: {fileID: 0}
+  npc: {fileID: 5283665626776899671}
+  gameManager: {fileID: 0}
   dialogueManager: {fileID: 0}
   dialogue:
     name:
@@ -1731,6 +1732,7 @@ MonoBehaviour:
   canvas: {fileID: 5681819355063305107}
   sraya: {fileID: 0}
   npc: {fileID: 5283665626776899671}
+  gameManager: {fileID: 0}
   dialogueManager: {fileID: 0}
   dialogue:
     name:

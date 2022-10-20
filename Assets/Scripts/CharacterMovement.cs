@@ -66,15 +66,33 @@ public class CharacterMovement : MonoBehaviour
             {
                 pickupAndDrop.canDrop = false;
                 isMove = true;
-                anim.SetFloat("Movement", 0.5f);
+
+                if (!pickupAndDrop.hasItem)
+                {
+                    anim.SetFloat("Movement", 1f);
+                }
+                else
+                {
+                    anim.SetFloat("MovingWhenGrab", 1f);
+                }
+
 				//move.y = _MoveY;
 				transform.forward = move;
             }
             else
             {
                 pickupAndDrop.canDrop = true;
-                isMove = false;                
-                anim.SetFloat("Movement", 0f);
+                isMove = false;
+
+                if (!pickupAndDrop.hasItem)
+                {
+                    anim.SetFloat("Movement", 0f);
+                }
+                else
+                {
+                    anim.SetFloat("MovingWhenGrab", 0f);
+                }
+
                 anim.SetBool("Push", false);
             }
         }
