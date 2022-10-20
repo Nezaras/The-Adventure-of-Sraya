@@ -42,6 +42,11 @@ public class DialogueTrigger : MonoBehaviour
             gameManager.PickupableKarungNenek();
             gameObject.SetActive(false);
         }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            dialogueManager.DisplayNextSentence();
+        }
     }
 
     public void ShowDialogue()

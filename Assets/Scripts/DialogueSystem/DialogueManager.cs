@@ -12,13 +12,14 @@ public class DialogueManager : MonoBehaviour
 
     [SerializeField] GameManager gameManager;
     [SerializeField] GameObject dialogBox;
+    [SerializeField] GameObject popupSuccess;
     [SerializeField] CharacterMovement player;
     [SerializeField] CinemachineVirtualCamera vCam;
+    [SerializeField] ScoreManager scoreManager;
 
     private Queue<string> _sentences;
     private Queue<string> _name;
-
-    // Start is called before the first frame update
+    
     void Start()
     {
         _name = new Queue<string>();
@@ -79,5 +80,10 @@ public class DialogueManager : MonoBehaviour
 
         //Make dialog box is inactive
         dialogBox.SetActive(false);
+
+        if (scoreManager.isAdd)
+        {
+            popupSuccess.SetActive(true);
+        }
     }
 }

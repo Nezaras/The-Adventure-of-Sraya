@@ -5,8 +5,11 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] NenekMovement nenekMovement;
+    [SerializeField] ScoreManager scoreManager;
     [SerializeField] PickupAndDrop pickup;
+
     [SerializeField] GameObject karungNenek;
+    [SerializeField] GameObject popupSuccess;
 
     public void QuestNenek()
     {
@@ -19,5 +22,19 @@ public class GameManager : MonoBehaviour
     public void PickupableKarungNenek()
     {
         karungNenek.tag = "PickupableObject";
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (scoreManager.isAdd)
+            {
+                popupSuccess.SetActive(false);
+
+                scoreManager.AddPoint();
+                scoreManager.isAdd = false;
+            }
+        }
     }
 }
