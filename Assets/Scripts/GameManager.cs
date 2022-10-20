@@ -18,6 +18,6 @@ public class GameManager : MonoBehaviour
 
     public void PickupableKarungNenek()
     {
-        karungNenek.gameObject.tag = "PickupableObject";
+        karungNenek.tag = "PickupableObject";
     }
 }

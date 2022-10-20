@@ -14,6 +14,7 @@ public class PickupAndDrop : MonoBehaviour
     bool _canPickup;
     public bool hasItem;
     
+    [HideInInspector]
     public GameObject pickupableObject;
 
     public bool canDrop;
@@ -93,6 +94,5 @@ public class PickupAndDrop : MonoBehaviour
         hasItem = false;
 
         dialogueNenek.ShowDialogue();
-
     }
 }
