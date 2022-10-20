@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class PlacementPoint : MonoBehaviour
 {
-    [SerializeField] ParameterKebaikan param;
+    [SerializeField] ScoreManager scoreManager;
+
     [SerializeField] int value;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("PickupableObject") || other.CompareTag("PushableObject"))
         {
-            param.current += value;
+            scoreManager.isAdd = true;
             other.tag = "PickedUpObject";
         }
     }

@@ -766,6 +766,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8534992205203353105}
   - component: {fileID: 2600478236399620455}
+  - component: {fileID: 4686486955541285606}
   m_Layer: 0
   m_Name: Chara
   m_TagString: Untagged
@@ -888,6 +889,19 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.0017476893, y: -0.0025870628, z: -0.00010832609}
     m_Extent: {x: 0.004628472, y: 0.008950191, z: 0.003299642}
   m_DirtyAABB: 0
+--- !u!65 &4686486955541285606
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3895493964904576940}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0065992866, y: 0.009256947, z: 0.017900378}
+  m_Center: {x: -0.00010834081, y: -0.0016194202, z: 0.008301085}
 --- !u!1 &4148423376150432618
 GameObject:
   m_ObjectHideFlags: 0

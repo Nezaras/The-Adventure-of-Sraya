@@ -10,6 +10,7 @@ public class LargeMap : MonoBehaviour
         {
             largeMapObject.SetActive(true);
         }
+
         if (Input.GetKeyUp(KeyCode.M))
         {
             largeMapObject.SetActive(false);
