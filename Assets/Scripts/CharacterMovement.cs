@@ -23,6 +23,7 @@ public class CharacterMovement : MonoBehaviour
 	
 	//yang ditambah
 	private float _MoveY;
+    private bool isRun = false;
 
     private void Start()
     {
@@ -40,11 +41,11 @@ public class CharacterMovement : MonoBehaviour
 
         Move();
         //Jump();
+        Run();
     }
 
     void Move()
     {
-		
         if (canMove)
         {
 			//yang ditambah (start)
@@ -95,6 +96,17 @@ public class CharacterMovement : MonoBehaviour
 
                 anim.SetBool("Push", false);
             }
+        }
+    }
+
+    void Run(){
+        if(Input.GetKeyDown(KeyCode.LeftShift) && !isRun){
+            isRun = true;
+            playerSpeed = 6f;
+        }
+        if(Input.GetKeyUp(KeyCode.LeftShift) && isRun){
+            isRun = false;
+            playerSpeed = 2.5f;
         }
     }
 
