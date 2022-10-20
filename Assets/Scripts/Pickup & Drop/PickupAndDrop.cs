@@ -4,22 +4,29 @@ using UnityEngine;
 
 public class PickupAndDrop : MonoBehaviour
 {
+    private Animator anim;
+
     [SerializeField] GameManager gameManager;
+    [SerializeField] BoxCollider boxCollider;
     [SerializeField] Transform handCharacter;
     [SerializeField] DialogueTrigger dialogueNenek;
 
     bool _canPickup;
-    bool _hasItem;
+    public bool hasItem;
     
-    [HideInInspector]
     public GameObject pickupableObject;
 
     public bool canDrop;
-   
+
+    private void Awake()
+    {
+        anim = GetComponent<Animator>();
+    }
+
     void Start()
     {
         _canPickup = false;
-        _hasItem = false;
+        hasItem = false;
     }
 
     void Update()
@@ -27,31 +34,17 @@ public class PickupAndDrop : MonoBehaviour
         if (_canPickup)
         {
             if (Input.GetKeyDown(KeyCode.E))
-            {
-                pickupableObject.GetComponent<Rigidbody>().isKinematic = true;
-                pickupableObject.transform.position = handCharacter.transform.position;
-                pickupableObject.transform.parent = handCharacter.transform;
-
-                pickupableObject.tag = "PickedUpObject";                
-
-                _hasItem = true;
-
-                gameManager.QuestNenek();
+            {                
+                StartCoroutine(PickUp());
+                boxCollider.enabled = false;
             }
         }
 
         if (canDrop)
         {
-            if (Input.GetKeyDown(KeyCode.Q) && _hasItem == true)
+            if (Input.GetKeyDown(KeyCode.Q) && hasItem == true)
             {
-                pickupableObject.GetComponent<Rigidbody>().isKinematic = false;
-                pickupableObject.transform.parent = null;
-
-                pickupableObject.tag = "PickupableObject";
-
-                dialogueNenek.ShowDialogue();
-
-                _hasItem = false;
+                Drop();
             }
         }
     }
@@ -67,5 +60,39 @@ public class PickupAndDrop : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         _canPickup = false;
+    }
+
+    IEnumerator PickUp()
+    {
+        anim.SetTrigger("Pickup");
+
+        yield return new WaitForSeconds(0.55f);
+
+        anim.SetTrigger("MovingGrab");
+
+        pickupableObject.GetComponent<Rigidbody>().isKinematic = true;
+        pickupableObject.transform.position = handCharacter.transform.position;
+        pickupableObject.transform.parent = handCharacter.transform;
+
+        pickupableObject.tag = "PickedUpObject";
+        hasItem = true;
+
+        gameManager.QuestNenek();
+    }
+
+    void Drop()
+    {
+        anim.SetTrigger("BackToMovement");
+
+        pickupableObject.GetComponent<Rigidbody>().isKinematic = false;
+        pickupableObject.transform.parent = null;
+
+        pickupableObject.tag = "PickupableObject";
+
+        boxCollider.enabled = true;
+        hasItem = false;
+
+        dialogueNenek.ShowDialogue();
+
     }
 }
