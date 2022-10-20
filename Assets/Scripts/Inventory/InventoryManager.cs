@@ -11,6 +11,8 @@ public class InventoryManager : MonoBehaviour
     public Transform ItemContent;
     public GameObject InventoryItem;
 
+    private int countRow = 0;
+
     private void Awake()
     {
         Instance = this;
@@ -28,18 +30,28 @@ public class InventoryManager : MonoBehaviour
 
     public void ListItems()
     {
-        foreach (Transform item in ItemContent)
-        {
+        foreach (Transform item in ItemContent){    
             Destroy(item.gameObject);
+            //Items.RemoveAt(i);
         }
+
         foreach (var item in Items)
         {
-            GameObject obj = Instantiate(InventoryItem, ItemContent);
-            var itemName = obj.transform.Find("ItemName").GetComponent<Text>();
-            var itemIcon = obj.transform.Find("ItemIcon").GetComponent<Image>();
+            //GameObject obj = Instantiate(InventoryItem, ItemContent);
+            //var getItemIcon = obj.transform.Find("itemIcon").GetComponent<Image>();
+
+            //getItemName.text = item.itemName;
+            //getItemIcon.sprite = item.Icon;
+            
+            GameObject objek = Instantiate(InventoryItem, ItemContent);
+            objek.SetActive(true);
+            
+
+            var itemName = objek.transform.Find("Item Name").GetComponent<Text>();
+            var iconItem = objek.transform.Find("Item Image").GetComponent<Image>();
 
             itemName.text = item.itemName;
-            itemIcon.sprite = item.Icon;
+            iconItem.sprite = item.Icon;
         }
     }
 
