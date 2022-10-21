@@ -108,7 +108,7 @@ public class CharacterMovement : MonoBehaviour
     void Run(){
         if(Input.GetKeyDown(KeyCode.LeftShift) && !isRun){
             isRun = true;
-            playerSpeed = 6f;
+            playerSpeed = 4f;
         }
         if(Input.GetKeyUp(KeyCode.LeftShift) && isRun){
             isRun = false;

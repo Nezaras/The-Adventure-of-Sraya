@@ -14,7 +14,6 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] GameObject dialogBox;
     [SerializeField] GameObject popupSuccess;
     [SerializeField] CharacterMovement player;
-    [SerializeField] CinemachineVirtualCamera vCam;
     [SerializeField] ScoreManager scoreManager;
 
     private Queue<string> _sentences;
@@ -28,9 +27,6 @@ public class DialogueManager : MonoBehaviour
     
     public void StartDialogue(Dialogue dialogue)
     {
-        //Adjust virtual cam
-        vCam.m_Lens.FieldOfView = 20;
-
         //Make player can't move
         player.canMove = false;
 
@@ -72,9 +68,6 @@ public class DialogueManager : MonoBehaviour
 
     public void EndDialogue()
     {
-        //Return field of view value camera
-        vCam.m_Lens.FieldOfView = 40;
-
         //Return canMove variable
         player.canMove = true;
 

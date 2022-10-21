@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1320223789875250027}
   - component: {fileID: 1320223789875250024}
+  - component: {fileID: 4799135045231829149}
   m_Layer: 0
   m_Name: FollowCam
   m_TagString: Untagged
@@ -53,7 +54,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 40
+    FieldOfView: 30
     OrthographicSize: 5
     NearClipPlane: 0.3
     FarClipPlane: 100
@@ -67,6 +68,23 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 1320223790207556678}
+--- !u!114 &4799135045231829149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1320223789875250025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f988ae95b65d2f47aa12c37104ed2ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SensitivityX: 2
+  SensitivityY: 2
+  _target: {fileID: 0}
+  _Distance: 1
+  moveCharYes: 1
 --- !u!1 &1320223790207556679
 GameObject:
   m_ObjectHideFlags: 0
