@@ -7,7 +7,8 @@ public class AyunanTrigger : MonoBehaviour
     [SerializeField] GameObject player;
     [SerializeField] GameObject ayunanAnim;
     [SerializeField] GameObject ayunanStatic;
-    [SerializeField] GameObject canvasAyunan;
+    [SerializeField] GameObject playText;
+    [SerializeField] GameObject stopText;
 
     bool isPlaying;
 
@@ -18,6 +19,10 @@ public class AyunanTrigger : MonoBehaviour
             if (!isPlaying)
             {
                 player.SetActive(false);
+
+                playText.SetActive(false);
+                stopText.SetActive(true);
+
                 ayunanStatic.SetActive(false);
                 ayunanAnim.SetActive(true);
                 isPlaying = true;
@@ -25,6 +30,10 @@ public class AyunanTrigger : MonoBehaviour
             else
             {
                 player.SetActive(true);
+
+                stopText.SetActive(false);
+                playText.SetActive(true);
+
                 ayunanAnim.SetActive(false);
                 ayunanStatic.SetActive(true);
                 isPlaying = false;
@@ -36,7 +45,7 @@ public class AyunanTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            canvasAyunan.SetActive(true);
+            playText.SetActive(true);
         }
     }
 
@@ -44,7 +53,7 @@ public class AyunanTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            canvasAyunan.SetActive(false);
+            playText.SetActive(false);
         }
     }
 }
