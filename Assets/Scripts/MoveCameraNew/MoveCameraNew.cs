@@ -15,7 +15,7 @@ public class MoveCameraNew : MonoBehaviour
 	public Transform _target;
 	
 	public float _Distance;
-	private bool moveCharYes = true;
+	public bool moveCharYes = true;
 	
     // Start is called before the first frame update
     void Start()

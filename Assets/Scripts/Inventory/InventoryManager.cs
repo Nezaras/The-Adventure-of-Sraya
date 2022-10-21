@@ -31,6 +31,7 @@ public class InventoryManager : MonoBehaviour
         foreach (Transform item in ItemContent){    
             Destroy(item.gameObject);
             //Items.RemoveAt(i);
+            Debug.Log("done");
         }
 
         foreach (var item in Items)
