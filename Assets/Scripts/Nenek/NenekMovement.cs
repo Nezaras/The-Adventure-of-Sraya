@@ -46,6 +46,7 @@ public class NenekMovement : MonoBehaviour
             speed = 0;
 
             tempatKarungNenek.SetActive(true);
+            tempatKarungNenek.GetComponent<BoxCollider>().enabled = true;
         }
     }
 }

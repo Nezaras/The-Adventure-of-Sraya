@@ -5,11 +5,13 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] NenekMovement nenekMovement;
+    [SerializeField] DialogueManager dialogueManager;
     [SerializeField] ScoreManager scoreManager;
     [SerializeField] PickupAndDrop pickup;
 
     [SerializeField] GameObject karungNenek;
     [SerializeField] GameObject popupSuccess;
+    [SerializeField] GameObject popupFail;
 
     public void QuestNenek()
     {
@@ -34,6 +36,15 @@ public class GameManager : MonoBehaviour
 
                 scoreManager.AddPoint();
                 scoreManager.isAdd = false;
+            }
+            popupFail.SetActive(false);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (dialogueManager.isDialogue)
+            {
+                dialogueManager.DisplayNextSentence();
             }
         }
     }

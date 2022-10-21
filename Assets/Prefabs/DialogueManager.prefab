@@ -45,6 +45,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 0}
   dialogueText: {fileID: 0}
+  time: 60
+  gameManager: {fileID: 0}
+  timerManager: {fileID: 0}
   dialogBox: {fileID: 0}
+  popupSuccess: {fileID: 0}
   player: {fileID: 0}
   vCam: {fileID: 0}
+  scoreManager: {fileID: 0}

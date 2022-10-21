@@ -9,13 +9,17 @@ public class DialogueManager : MonoBehaviour
 {
     [SerializeField] Text nameText;
     [SerializeField] Text dialogueText;
+    [SerializeField] int time;
 
     [SerializeField] GameManager gameManager;
+    [SerializeField] TimerManager timerManager;
     [SerializeField] GameObject dialogBox;
     [SerializeField] GameObject popupSuccess;
     [SerializeField] CharacterMovement player;
     [SerializeField] CinemachineVirtualCamera vCam;
     [SerializeField] ScoreManager scoreManager;
+
+    public bool isDialogue;
 
     private Queue<string> _sentences;
     private Queue<string> _name;
@@ -28,6 +32,8 @@ public class DialogueManager : MonoBehaviour
     
     public void StartDialogue(Dialogue dialogue)
     {
+        isDialogue = true;
+
         //Adjust virtual cam
         vCam.m_Lens.FieldOfView = 20;
 
@@ -72,6 +78,8 @@ public class DialogueManager : MonoBehaviour
 
     void EndDialogue()
     {
+        isDialogue = false;
+
         //Return field of view value camera
         vCam.m_Lens.FieldOfView = 40;
 
@@ -85,5 +93,8 @@ public class DialogueManager : MonoBehaviour
         {
             popupSuccess.SetActive(true);
         }
+
+        timerManager.timerCount = true;
+        timerManager.AddTimer(time);
     }
 }

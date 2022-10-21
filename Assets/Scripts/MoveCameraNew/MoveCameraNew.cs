@@ -10,7 +10,7 @@ public class MoveCameraNew : MonoBehaviour
 	
 	private float _rotateX;
 	private float _rotateY;
-	private float _scrollY = 30;
+	private float _scrollY = 40;
 	
 	public Transform _target;
 	

@@ -10,6 +10,7 @@ public class PickupAndDrop : MonoBehaviour
     [SerializeField] BoxCollider boxCollider;
     [SerializeField] Transform handCharacter;
     [SerializeField] DialogueTrigger dialogueNenek;
+    [SerializeField] PlacementPoint placement;
 
     bool _canPickup;
     public bool hasItem;
@@ -93,6 +94,9 @@ public class PickupAndDrop : MonoBehaviour
         boxCollider.enabled = true;
         hasItem = false;
 
-        dialogueNenek.ShowDialogue();
+        if (placement.isRightPlace)
+        {
+            dialogueNenek.ShowDialogue();
+        }
     }
 }

@@ -34,18 +34,13 @@ public class DialogueTrigger : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.F) && isNear)
+        if (Input.GetKeyDown(KeyCode.F) && isNear)
         {
             ShowDialogue();
             canvas.SetActive(false);
 
             gameManager.PickupableKarungNenek();
             gameObject.SetActive(false);
-        }
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            dialogueManager.DisplayNextSentence();
         }
     }
 

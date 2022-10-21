@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
 {
-    public float playerSpeed = 5.0f;
+    public float playerSpeed;
     public bool canMove;
     public bool isMove;
 	public float speedCamera;
@@ -102,7 +102,7 @@ public class CharacterMovement : MonoBehaviour
     void Run(){
         if(Input.GetKeyDown(KeyCode.LeftShift) && !isRun){
             isRun = true;
-            playerSpeed = 6f;
+            playerSpeed = 3.5f;
         }
         if(Input.GetKeyUp(KeyCode.LeftShift) && isRun){
             isRun = false;
