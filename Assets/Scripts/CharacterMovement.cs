@@ -97,6 +97,12 @@ public class CharacterMovement : MonoBehaviour
                 anim.SetBool("Push", false);
             }
         }
+        else
+        {
+            anim.SetFloat("Movement", 0f);
+            anim.SetFloat("MovingWhenGrab", 0f);
+            anim.SetBool("Push", false);
+        }
     }
 
     void Run(){

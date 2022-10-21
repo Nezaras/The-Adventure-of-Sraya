@@ -70,7 +70,7 @@ public class DialogueManager : MonoBehaviour
         dialogueText.text = sentence;
     }
 
-    void EndDialogue()
+    public void EndDialogue()
     {
         //Return field of view value camera
         vCam.m_Lens.FieldOfView = 40;

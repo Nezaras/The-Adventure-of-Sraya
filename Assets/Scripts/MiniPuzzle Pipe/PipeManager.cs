@@ -12,6 +12,8 @@ public class PipeManager : MonoBehaviour
     int totalPipes;
     [SerializeField] int correctedPipes;
 
+    public bool isDone;
+
     void Start()
     {
         totalPipes = pipesParent.transform.childCount;
@@ -30,10 +32,16 @@ public class PipeManager : MonoBehaviour
         if (correctedPipes == totalPipes)
         {
             done.interactable = true;
+            isDone = true;
+
+            Screen.lockCursor = false;
+            GameObject.Find("FollowCam").GetComponent<MoveCameraNew>().moveCharYes = true;
+            GameObject.Find("NewSraya").GetComponent<CharacterMovement>().canMove = true;
         }
         else
         {
             done.interactable = false;
+            isDone = false;
         }
     }
 

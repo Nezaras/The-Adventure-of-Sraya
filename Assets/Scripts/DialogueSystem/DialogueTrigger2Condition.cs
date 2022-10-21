@@ -1,7 +1,7 @@
 using UnityEngine;
 using Cinemachine;
 
-public class DialogueTrigger : MonoBehaviour
+public class DialogueTrigger2Condition : MonoBehaviour
 {
     [SerializeField] GameObject canvas;
 
@@ -10,13 +10,18 @@ public class DialogueTrigger : MonoBehaviour
 
     [SerializeField] GameManager gameManager;
     [SerializeField] Dialogue dialogueNormal;
-    [SerializeField] Dialogue dialogueFinish;
+    [SerializeField] Dialogue dialogueAdaBarang;
+    [SerializeField] Dialogue dialogueTidakAdaBarang;
 
     [SerializeField] DialogueManager dialogueManager;
-    [SerializeField] GameObject scoreManager;
+
+    public GameObject inventoryManager;
+    public GameObject scoreManager;
+
+    private bool isFirst = true;
 
     bool isNear;
-    bool isFirst = true;
+    bool contain;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -43,7 +48,7 @@ public class DialogueTrigger : MonoBehaviour
             ShowDialogue();
             canvas.SetActive(false);
 
-            gameManager.PickupableKarungNenek();
+            //gameManager.PickupableKarungNenek();
             //gameObject.SetActive(false);
         }
     }
@@ -58,9 +63,24 @@ public class DialogueTrigger : MonoBehaviour
             isFirst = false;
         }
         else{
-            dialogueManager.StartDialogue(dialogueFinish);
-            dialogueManager.DisplayNextSentence();
-            scoreManager.GetComponent<ScoreManager>().isAdd = true;
+            foreach (Item item in inventoryManager.GetComponent<InventoryManager>().Items){
+                if(item.itemName.Contains("Roti")){
+                    contain = true;
+                }
+                //Debug.Log(item.itemName.Contains("Roti"));
+            }
+
+            if(contain){
+                dialogueManager.StartDialogue(dialogueAdaBarang);
+                dialogueManager.DisplayNextSentence();
+
+                scoreManager.GetComponent<ScoreManager>().isAdd = true;
+                //popupSuccess.translate.GetComponent<ScoreManager>.isAdd = true;
+            }
+            else{
+                dialogueManager.StartDialogue(dialogueTidakAdaBarang);
+                dialogueManager.DisplayNextSentence();
+            }
         }
     }
 }
