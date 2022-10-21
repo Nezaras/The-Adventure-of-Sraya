@@ -1,7 +1,7 @@
 using UnityEngine;
 using Cinemachine;
 
-public class DialogueTrigger : MonoBehaviour
+public class DialogueTriggerAyah : MonoBehaviour
 {
     [SerializeField] GameObject canvas;
 
@@ -43,7 +43,7 @@ public class DialogueTrigger : MonoBehaviour
             ShowDialogue();
             canvas.SetActive(false);
 
-            gameManager.PickupableKarungNenek();
+            //gameManager.PickupableKarungNenek();
             //gameObject.SetActive(false);
         }
     }
@@ -55,12 +55,15 @@ public class DialogueTrigger : MonoBehaviour
         if(isFirst){
             dialogueManager.StartDialogue(dialogueNormal);
             dialogueManager.DisplayNextSentence();
+            GameObject.Find("Torrent").transform.GetChild(2).gameObject.SetActive(true);
             isFirst = false;
         }
-        else{
+
+        if(GameObject.Find("Canvas").transform.GetChild(6).gameObject.transform.GetChild(2).gameObject.GetComponent<PipeManager>().isDone){
             dialogueManager.StartDialogue(dialogueFinish);
             dialogueManager.DisplayNextSentence();
-            scoreManager.GetComponent<ScoreManager>().isAdd = true;
+
+           scoreManager.GetComponent<ScoreManager>().isAdd = true;
         }
     }
 }
