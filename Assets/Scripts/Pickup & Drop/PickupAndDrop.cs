@@ -28,6 +28,7 @@ public class PickupAndDrop : MonoBehaviour
     {
         _canPickup = false;
         hasItem = false;
+        canDrop = false;
     }
 
     void Update()
