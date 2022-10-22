@@ -11,12 +11,15 @@ public class DialogueTrigger : MonoBehaviour
     [SerializeField] GameManager gameManager;
     [SerializeField] Dialogue dialogueNormal;
     [SerializeField] Dialogue dialogueFinish;
-
     [SerializeField] DialogueManager dialogueManager;
+
     [SerializeField] GameObject scoreManager;
+    [SerializeField] GameObject trigger;
+
+    [SerializeField] bool isNenek;
 
     bool isNear;
-    bool isFirst = true;
+    public bool isFirst = true;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -40,11 +43,13 @@ public class DialogueTrigger : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.F) && isNear)
         {
+            Debug.Log("Dialog Nenek");
             ShowDialogue();
             canvas.SetActive(false);
+            trigger.SetActive(false);
 
             gameManager.PickupableKarungNenek();
-            //gameObject.SetActive(false);
+            isNear = false;
         }
     }
 
@@ -55,7 +60,11 @@ public class DialogueTrigger : MonoBehaviour
         if(isFirst){
             dialogueManager.StartDialogue(dialogueNormal);
             dialogueManager.DisplayNextSentence();
-            isFirst = false;
+
+            if (!isNenek)
+            {
+                isFirst = false;
+            }
         }
         else{
             dialogueManager.StartDialogue(dialogueFinish);

@@ -4,18 +4,14 @@ using PathCreation;
 public class NenekMovement : MonoBehaviour
 {
     [SerializeField] GameObject tempatKarungNenek;
+    [SerializeField] DialogueTrigger dialogueTrigger;
     [SerializeField] PathCreator pathCreator;
     [SerializeField] EndOfPathInstruction endOfPathInstruction;
+    [SerializeField] Animator anim;
 
     public float speed;
     
     private float distanceTravelled;
-    private Animator anim;
-
-    void Awake()
-    {
-        anim = GetComponent<Animator>();
-    }
 
     void Start()
     {
@@ -44,6 +40,8 @@ public class NenekMovement : MonoBehaviour
         {
             anim.SetBool("Walk", false);
             speed = 0;
+
+            dialogueTrigger.isFirst = false;
 
             tempatKarungNenek.SetActive(true);
         }

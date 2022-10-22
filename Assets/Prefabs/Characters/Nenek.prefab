@@ -1171,6 +1171,7 @@ MonoBehaviour:
   tempatKarungNenek: {fileID: 0}
   pathCreator: {fileID: 0}
   endOfPathInstruction: 2
+  anim: {fileID: 0}
   speed: 0
 --- !u!1 &4881381380121406982
 GameObject:
@@ -1417,7 +1418,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5681819355063305107}
-  m_LocalRotation: {x: 0, y: 0.8870109, z: -0, w: -0.46174863}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1425,7 +1426,7 @@ RectTransform:
   - {fileID: 4994195230993479553}
   m_Father: {fileID: 5283665626776899671}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 235, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 1.9}
@@ -1723,11 +1724,39 @@ MonoBehaviour:
   npc: {fileID: 5283665626776899671}
   gameManager: {fileID: 0}
   dialogueNormal:
-    name: []
-    sentences: []
+    name:
+    - Sraya
+    - Nenek
+    - Sraya
+    - Nenek
+    - Sraya
+    - Nenek
+    sentences:
+    - Punten nek, mau saya bantu membawakan barang?
+    - 'Tidak usah nak.. nenek masih kuat.. '
+    - 'Ayolah nek, saya hanya ingin membantu '
+    - "Hmm baiklah.. Kalau begitu tolong bawakan karung beras disana ya\u2026"
+    - 'Ayay capten! diantar kemana nek? '
+    - 'Ke rumahku nak, ikuti aku ya.. '
   dialogueFinish:
-    name: []
-    sentences: []
+    name:
+    - Nenek
+    - Sraya
+    - Nenek
+    - Sraya
+    - Nenek
+    - Nenek
+    - Sraya
+    sentences:
+    - 'Terimakasih banyak ya nak ,semoga tuhan membalas kebaikan kamu '
+    - Sama-sama nek, senang bisa membantu!
+    - "Sepertinya kamu tidak ada kesibukan nak sehingga bisa menolong ku\r. Anak
+      jaman sekarang kan sibuk-sibuk semua "
+    - Tidak juga nek, sudah seharusnya sebagai anak muda aku menolong nenek hehe
+    - Hahaha begitu ya
+    - "Kalau kamu bingung mau ngapain pergi saja ketaman \r\nkamu bisa bermain ayunan
+      disana\r. Mungkin bisa mengenang masa kecilmu"
+    - Hahaha baiklah nek!
   dialogueManager: {fileID: 0}
   scoreManager: {fileID: 0}
 --- !u!1 &5890463742234297517

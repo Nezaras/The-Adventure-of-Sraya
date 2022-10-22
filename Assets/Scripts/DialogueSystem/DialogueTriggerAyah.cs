@@ -9,10 +9,11 @@ public class DialogueTriggerAyah : MonoBehaviour
     [SerializeField] Transform npc;
 
     [SerializeField] GameManager gameManager;
+    [SerializeField] PipeManager pipeManager;
+    [SerializeField] DialogueManager dialogueManager;
     [SerializeField] Dialogue dialogueNormal;
     [SerializeField] Dialogue dialogueFinish;
 
-    [SerializeField] DialogueManager dialogueManager;
     [SerializeField] GameObject scoreManager;
 
     bool isNear;
@@ -59,7 +60,7 @@ public class DialogueTriggerAyah : MonoBehaviour
             isFirst = false;
         }
 
-        if(GameObject.Find("Canvas").transform.GetChild(6).gameObject.transform.GetChild(2).gameObject.GetComponent<PipeManager>().isDone){
+        if(pipeManager.isDone){
             dialogueManager.StartDialogue(dialogueFinish);
             dialogueManager.DisplayNextSentence();
 

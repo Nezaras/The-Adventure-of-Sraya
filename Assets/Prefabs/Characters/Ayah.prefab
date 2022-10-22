@@ -684,6 +684,8 @@ MonoBehaviour:
   sraya: {fileID: 0}
   npc: {fileID: 3654549572201376724}
   gameManager: {fileID: 0}
+  pipeManager: {fileID: 0}
+  dialogueManager: {fileID: 0}
   dialogueNormal:
     name:
     - Sraya
@@ -695,10 +697,10 @@ MonoBehaviour:
     - 'Punten pak lagi benerin apa ya?
 
       Mungkin saya bisa bantu.'
-    - 'oooh ini, jadi dari tadi bapak kebingungan menyusun pipa saluran ladang ,
-      apakah kamu bisa bantu bapak menyusunnya? '
+    - 'Oooh ini, jadi dari tadi bapak kebingungan menyusun pipa toren, apakah kamu
+      bisa bantu bapak menyusunnya? '
     - Salurannya dimana ya pak?
-    - itu disebelah gazebo.
+    - Itu disebelah rumah.
     - Baik pak coba saya lihat dulu ya pak.
   dialogueFinish:
     name:
@@ -719,7 +721,6 @@ MonoBehaviour:
 
       baiklah saya terima ya pak, terimakasih banyak pak!'
     - Terima kasih kembali nak.
-  dialogueManager: {fileID: 0}
   scoreManager: {fileID: 0}
 --- !u!1 &3836266455872452021
 GameObject:
