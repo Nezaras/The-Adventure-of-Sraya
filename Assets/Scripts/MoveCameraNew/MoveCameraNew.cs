@@ -29,7 +29,7 @@ public class MoveCameraNew : MonoBehaviour
 		if(moveCharYes){
 			moveChar();
 		}
-		if(Input.GetKeyUp(KeyCode.LeftAlt)){
+		if(Input.GetKeyUp(KeyCode.LeftAlt) || Input.GetKeyUp(KeyCode.RightAlt)){
 			moveCharYes = !moveCharYes;
 			Screen.lockCursor = moveCharYes;
 		}

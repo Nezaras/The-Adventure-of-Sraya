@@ -13,6 +13,8 @@ public class Konfirmasi : MonoBehaviour
     public GameObject limitItem2;
     public GameObject limitItem3;
 
+    public GameObject uang;
+
     private int itemTerpilih = 0;
     private bool isClickYes = false;
 
@@ -49,18 +51,26 @@ public class Konfirmasi : MonoBehaviour
     void pilihan(){
         if(itemTerpilih==1){
                 //Debug.Log("item1");
+                limitItem1.transform.Find("Statusitem").GetComponent<Text>().text = "Limit Item: 0";
+                limitItem1.GetComponent<Button>().interactable = false;
 
-                limitItem1.GetComponent<Text>().text = "Limit Item: 0";
+                uang.transform.Find("StatusUang").GetComponent<Text>().text = "Jumlah Uang: Rp.60.000";
                 InventoryManager.Instance.Add(item1);
             }
             else if(itemTerpilih==2){
                 //Debug.Log("item2");
-                limitItem2.GetComponent<Text>().text = "Limit Item: 0";
+                limitItem2.transform.Find("Statusitem").GetComponent<Text>().text = "Limit Item: 0";
+                limitItem2.GetComponent<Button>().interactable = false;
+
+                uang.transform.Find("StatusUang").GetComponent<Text>().text = "Jumlah Uang: Rp.50.000";
                 InventoryManager.Instance.Add(item2);
             }
             else if(itemTerpilih==3){
                 //Debug.Log("item3");
-                limitItem3.GetComponent<Text>().text = "Limit Item: 0";
+                limitItem3.transform.Find("Statusitem").GetComponent<Text>().text = "Limit Item: 0";
+                limitItem3.GetComponent<Button>().interactable = false;
+
+                uang.transform.Find("StatusUang").GetComponent<Text>().text = "Jumlah Uang: Rp.0";
                 InventoryManager.Instance.Add(item3);
             }
     }

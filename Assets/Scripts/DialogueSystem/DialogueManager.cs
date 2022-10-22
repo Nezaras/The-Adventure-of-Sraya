@@ -77,6 +77,7 @@ public class DialogueManager : MonoBehaviour
         if (scoreManager.isAdd)
         {
             popupSuccess.SetActive(true);
+            Screen.lockCursor = true;
         }
     }
 }

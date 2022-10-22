@@ -21,7 +21,7 @@ public class TorrentScript : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.E) && isNear){
             pipePuzzle.SetActive(true);
             
-            Screen.lockCursor = false;
+            Cursor.lockState = CursorLockMode.None;
             GameObject.Find("FollowCam").GetComponent<MoveCameraNew>().moveCharYes = false;
             GameObject.Find("NewSraya").GetComponent<CharacterMovement>().canMove = false;
         }

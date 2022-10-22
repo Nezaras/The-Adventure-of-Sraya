@@ -27,7 +27,7 @@ public class ShopController : MonoBehaviour
                 isOpen = !isOpen;
 
                 GameObject.Find("FollowCam").GetComponent<MoveCameraNew>().moveCharYes = false;
-                Screen.lockCursor = false;
+                Cursor.lockState = CursorLockMode.None;
             }
             if(Input.GetKeyDown(KeyCode.Escape)){
                 if(konfirmasiShop.activeSelf){

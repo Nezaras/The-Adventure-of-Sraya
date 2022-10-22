@@ -34,7 +34,7 @@ public class PipeManager : MonoBehaviour
             done.interactable = true;
             isDone = true;
 
-            Screen.lockCursor = false;
+            Screen.lockCursor = true;
             GameObject.Find("FollowCam").GetComponent<MoveCameraNew>().moveCharYes = true;
             GameObject.Find("NewSraya").GetComponent<CharacterMovement>().canMove = true;
         }
