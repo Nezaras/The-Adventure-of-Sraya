@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 [ExecuteInEditMode()]
 public class ParameterKebaikan : MonoBehaviour
@@ -16,6 +17,11 @@ public class ParameterKebaikan : MonoBehaviour
     void Update()
     {
         GetCurrentFill();
+
+        if(current == max)
+        {
+            SceneManager.LoadScene("Epilog");
+        }
     }
 
     void GetCurrentFill()

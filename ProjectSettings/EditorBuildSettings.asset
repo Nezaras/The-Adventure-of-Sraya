@@ -9,6 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: 66086bc3862a63e41bc1a40be620df7a
   - enabled: 1
+    path: Assets/Scenes/Prologue.unity
+    guid: 73527cf3b30093d42a349d1399ba4ace
+  - enabled: 1
     path: Assets/Scenes/GameplayFix.unity
     guid: f3f95af00cd15f749bfcc674dfc2b3c3
+  - enabled: 1
+    path: Assets/Scenes/Epilog.unity
+    guid: 3fe6a5551d6f4fc45b3ee09d5bbfd79f
   m_configObjects: {}
