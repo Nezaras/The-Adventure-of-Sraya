@@ -1,4 +1,8 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 using Cinemachine;
 
 public class DialogueTriggerAyah : MonoBehaviour
@@ -13,6 +17,11 @@ public class DialogueTriggerAyah : MonoBehaviour
     [SerializeField] DialogueManager dialogueManager;
     [SerializeField] Dialogue dialogueNormal;
     [SerializeField] Dialogue dialogueFinish;
+
+    [SerializeField] GameObject item1;
+    [SerializeField] GameObject item2;
+    [SerializeField] GameObject item3;
+    [SerializeField] GameObject uang;
 
     [SerializeField] GameObject scoreManager;
 
@@ -65,6 +74,12 @@ public class DialogueTriggerAyah : MonoBehaviour
             dialogueManager.DisplayNextSentence();
 
            scoreManager.GetComponent<ScoreManager>().isAdd = true;
+
+            item1.GetComponent<Button>().interactable = true;
+            item2.GetComponent<Button>().interactable = true;
+            item3.GetComponent<Button>().interactable = true;
+
+            uang.transform.Find("TotalUang").GetComponent<Text>().text = "Jumlah Uang: Rp.80000";
         }
     }
 }
